@@ -37,7 +37,7 @@ const ProductList = () => {
                 </thead>
                 <tbody>
                     { products.map((product, index) => (
-                        <tr key={ product.id }>
+                        <tr key={ product.id } data-testid="product">
                             <td>{ index + 1 }</td>
                             <td>{ product.title }</td>
                             <td>{ product.price }</td>
