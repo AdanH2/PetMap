@@ -10,9 +10,6 @@ const User = db.define('users', {
     passwordhash:{
         type: DataTypes.STRING
     },
-    salt:{
-        type: DataTypes.STRING
-    },
     first_name:{
         type: DataTypes.STRING
     },

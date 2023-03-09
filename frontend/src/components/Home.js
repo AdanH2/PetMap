@@ -8,7 +8,8 @@ const Home = () => {
             Welcome to PetMap!!!
         </div>
         <div>
-            <Link to="/login" className="button is-primary mt-2">Login</Link>
+            <Link to="/login" className="button is-primary mt-2" style={{marginRight: '20px'}}>Login</Link>
+            <Link to="/signup" className="button is-primary mt-2">Sign Up</Link>
         </div>
     </div>
   )

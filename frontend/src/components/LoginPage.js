@@ -3,28 +3,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import bcrypt from "bcryptjs";
 
-const Login = () => {
+const LoginPage = () => {
     const [password, setPassword] = useState('');
     const [userName, setUserName] = useState('');
     const navigate = useNavigate();
-
-    const saveLoginInfo = async (e) => {
-        e.preventDefault();
-
-        const salt = bcrypt.genSaltSync(10);
-        const hashedPassword = bcrypt.hashSync(password, salt);
-
-        try {
-            await axios.post('http://localhost:5000/users', {
-                passwordhash: hashedPassword,
-                username: userName,
-                salt: salt
-            });
-            //navigate('/home');
-        } catch (error) {
-            console.log(error);
-        }
-    }
 
     const loginUser = async (e) => {
         e.preventDefault();
@@ -41,10 +23,11 @@ const Login = () => {
                     alert("Incorrect Password.")
                     console.log("Passwords do not match.");
                 } else {
+                    navigate('/home');
+                    alert("Welcome Back!")
                     console.log("Passwords match.");
                 }
-            });
-
+            });    
         } catch (error) {
             console.log(error);
         }
@@ -53,7 +36,7 @@ const Login = () => {
     return (
         <div>
             <h1 className="title">Login</h1>
-            <form onSubmit={saveLoginInfo}>
+            <form>
                 <div className="field">
                     <input
                         className="input"
@@ -61,6 +44,7 @@ const Login = () => {
                         placeholder="User Name"
                         value={userName}
                         onChange={(e) => setUserName(e.target.value)}
+                        required
                     />
                 </div>
 
@@ -71,11 +55,8 @@ const Login = () => {
                         placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        required
                     />
-                </div>
-
-                <div className="field">
-                    <button className="button is-primary">Sign Up</button>
                 </div>
             </form>
 
@@ -86,4 +67,4 @@ const Login = () => {
     )
 };
 
-export default Login;
+export default LoginPage;
