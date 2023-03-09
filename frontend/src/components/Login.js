@@ -35,8 +35,10 @@ const Login = () => {
 
             bcrypt.compare(password, retrievedPassword, function(err, isMatch){
                 if(err){
+                    alert("Incorrect Username.");
                     throw err;
                 } else if(!isMatch){
+                    alert("Incorrect Password.")
                     console.log("Passwords do not match.");
                 } else {
                     console.log("Passwords match.");
@@ -78,7 +80,7 @@ const Login = () => {
             </form>
 
             <div className="field">
-                <button className="button is-primary" onClick={(e) => loginUser(e)}>Log In</button>
+                <button className="button is-primary" style={{marginTop:'10px'}} onClick={(e) => loginUser(e)}>Log In</button>
             </div>
         </div>
     )
