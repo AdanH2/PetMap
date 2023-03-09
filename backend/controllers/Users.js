@@ -20,11 +20,11 @@ export const createUser = async (req,res) => {
     }
 }
 
-export const getUserById = async (req,res) => {
+export const getUserByUserName = async (req,res) => {
     try {
         const user = await User.findAll({
             where: {
-                user_id: req.params.id
+                username: req.params.userName
             }
         });
         res.json(user[0]);

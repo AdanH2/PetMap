@@ -13,8 +13,8 @@ const EditProduct = () => {
         e.preventDefault();
         try{
             await axios.patch(`http://localhost:5000/products/${id}`,{
-            title: title,
-            price: price
+                title: title,
+                price: price
             });
             navigate("/home");
         } catch (error) {
