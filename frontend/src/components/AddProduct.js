@@ -21,7 +21,7 @@ const AddProduct = () => {
     }
 
     return (
-        <div>
+        <div className='container'>
             <form onSubmit={saveProduct}>
                 <div className="field">
                     <label className="label">Title</label>

@@ -5,15 +5,16 @@ import EditProduct from "./components/EditProduct";
 import LoginPage from "./components/LoginPage";
 import SignUpPage from "./components/SignUpPage";
 import Home from "./components/Home";
+import Map from "./components/Map";
  
 function App() {
   return (
     <Router>
-    <div className="container">
       <div className="columns">
-        <div className="column is-half is-offset-one-quarter">
+        <div className="column">
           <Routes>
             <Route path="/" element={<Home/>}/>
+            <Route path="/map" element={<Map/>}/>
             <Route path="/signup" element={<SignUpPage/>}/>
             <Route path="/login" element={<LoginPage/>}/>
             <Route path="/home" element={<ProductList />}/>
@@ -22,7 +23,6 @@ function App() {
           </Routes>
         </div>
       </div>
-    </div>
     </Router>
   );
 }

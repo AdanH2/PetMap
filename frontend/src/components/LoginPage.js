@@ -33,8 +33,18 @@ const LoginPage = () => {
         }
     }
 
+    const togglePassword = () => {
+        var x = document.getElementById("passwordText");
+
+        if (x.type === "password"){
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+
     return (
-        <div>
+        <div className="container">
             <h1 className="title">Login</h1>
             <form>
                 <div className="field">
@@ -50,6 +60,7 @@ const LoginPage = () => {
 
                 <div className="field">
                     <input
+                        id="passwordText"
                         className="input"
                         type="password"
                         placeholder="Password"
@@ -58,6 +69,8 @@ const LoginPage = () => {
                         required
                     />
                 </div>
+
+                <input type="checkbox" style={{marginTop: '20px'}} onClick={togglePassword}/>  Show Password
             </form>
 
             <div className="field">

@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
+import NavBar from "./NavBar";
 
 
 const Home = () => {
   return (
-    <div style={{textAlign:'center'}}>
-        <div className="title">
-            Welcome to PetMap!!!
-        </div>
-        <div>
-            <Link to="/login" className="button is-primary mt-2" style={{marginRight: '20px'}}>Login</Link>
-            <Link to="/signup" className="button is-primary mt-2">Sign Up</Link>
-        </div>
+    <div>
+      <NavBar/>
+      <div style={{textAlign:'center'}}>
+          <div className="title">
+              Welcome to PetMap!!!
+          </div>
+      </div>
     </div>
   )
 };
