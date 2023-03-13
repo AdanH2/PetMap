@@ -44,7 +44,7 @@ const LoginPage = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container" style={{paddingTop: '10px'}}>
             <h1 className="title">Login</h1>
             <form>
                 <div className="field">

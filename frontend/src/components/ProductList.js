@@ -25,7 +25,6 @@ const ProductList = () => {
  
     return (
         <div className='container'>
-            <Link to="/" className="button is-primary mt-2" style={{marginRight:'20px'}}>Log Out</Link>
             <Link to="/add" className="button is-primary mt-2">Add New</Link>
             <table className="table is-striped is-fullwidth">
                 <thead>
