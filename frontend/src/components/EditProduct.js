@@ -13,10 +13,10 @@ const EditProduct = () => {
         e.preventDefault();
         try{
             await axios.patch(`http://localhost:5000/products/${id}`,{
-            title: title,
-            price: price
+                title: title,
+                price: price
             });
-            navigate("/");
+            navigate("/home");
         } catch (error) {
             console.log(error);
         }
@@ -34,7 +34,7 @@ const EditProduct = () => {
     }
  
     return (
-        <div>
+        <div className='container'>
             <form onSubmit={ updateProduct }>
                 <div className="field">
                     <label className="label">Title</label>
