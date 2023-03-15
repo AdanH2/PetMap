@@ -51,7 +51,7 @@ const SignUpPage = () => {
 
     return (
         <div className="container" style={{paddingTop: '10px'}}>
-            <h1 className="title">Sign Up</h1>
+            <h1 className="title">Sign Up!!!</h1>
             <form onSubmit={signUp}>
                 <div className="field">
                     <input
