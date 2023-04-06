@@ -11,8 +11,8 @@ import{
 const router2 = express.Router();
 
 router2.get('/', getAllUsers);
-router2.get('/:userName', getUserByUserName);
-router2.post('/', createUser);
+router2.post('/login', getUserByUserName);
+router2.post('/register', createUser);
 router2.patch('/:id', updateUser);
 router2.delete('/:id', deleteUser);
 
