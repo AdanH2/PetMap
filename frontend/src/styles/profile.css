@@ -1,0 +1,46 @@
+#image {
+    height: 100%;
+    display: block;
+    border-radius: 20px;
+    object-fit: cover;
+    /* object-position: b; */
+
+}
+.image { 
+    text-align: center;
+    height: 150px;
+}
+
+.choose-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    /* display: grid; */
+}
+
+/* .hero-body { 
+    text-align: center;
+} */
+
+.profile-pic {
+    border: solid white;
+    background-color: lightgray;
+    border-radius: 50%;
+    width: 13vh;
+    height: 13vh;
+    line-height: 13vh;
+    text-align: center;
+    overflow: hidden;
+    right: 10%;
+    top: 30%;
+    z-index: 10;
+    position: absolute;
+}
+
+.profile-header {
+    margin-bottom: 10%;
+}
+
+

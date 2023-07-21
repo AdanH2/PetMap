@@ -50,7 +50,7 @@ const SignUpPage = () => {
     }
 
     const togglePassword = () => {
-        var x = document.getElementsByName("passwordText");
+        let x = document.getElementsByName("passwordText");
 
         if (x[0].type === "password"){
             x[0].type = "text";
@@ -66,8 +66,8 @@ const SignUpPage = () => {
     } else {
         return (
             <div className="container" style={{paddingTop: '10px'}}>
-                <h1 className="title">Sign Up!!!</h1>
-                <form onSubmit={signUp}>
+                <form onSubmit={signUp} className="box">
+                    <h1 className="title">Sign Up!!!</h1>
                     <div className="field">
                         <input
                             className="input"
@@ -137,7 +137,7 @@ const SignUpPage = () => {
                     </div>
 
                     <div className="field">
-                        <button className="button is-primary" style={{marginTop: '10px'}}>Sign Up</button>
+                        <button className="button is-success is-light" style={{marginTop: '0px'}}>Sign Up</button>
                     </div>
                 </form>
             </div>

@@ -22,6 +22,24 @@ const ProductList = () => {
             console.log(error);
         }
     }
+
+    const addStyling = (e) => {
+        const tableChildren = document.getElementsByClassName("table")[0].children[1].children;
+
+        let className = e.parentElement.className;
+
+        if(className === "is-selected"){
+            className = "";
+        } else {
+            className = "is-selected";
+        }
+
+        for(let i = 0; i < tableChildren.length; i++){
+            tableChildren[i].className = "";
+        }
+
+        e.parentElement.className = className;
+    }
  
     return (
         <div className='container'>
@@ -37,7 +55,7 @@ const ProductList = () => {
                 </thead>
                 <tbody>
                     { products.map((product, index) => (
-                        <tr key={ product.id } data-testid="product">
+                        <tr key={ product.id } data-testid="product" onClick={ (e) => addStyling(e.target) }>
                             <td>{ index + 1 }</td>
                             <td>{ product.title }</td>
                             <td>{ product.price }</td>

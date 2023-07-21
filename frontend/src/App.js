@@ -9,6 +9,8 @@ import Home from "./components/Home";
 import Map from "./components/Map";
 import NavBar from "./components/NavBar";
 import Profile from "./components/Profile";
+import ForgotPassword from "./components/ForgotPassword";
+import ResetPassword from "./components/ResetPassword";
 
 function App() {
     return (
@@ -51,6 +53,8 @@ function App() {
                                 </RequireAuth>
                             }
                         />
+                        <Route path="/forgotPassword" element={<ForgotPassword />}/>
+                        {/* <Route path="/resetPassword/:id/:token" element={<ResetPassword />}/> */}
                     </Routes>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSignIn, useIsAuthenticated } from "react-auth-kit";
+import axios from "axios";
 
 const LoginPage = () => {
     const [password, setPassword] = useState('');
@@ -13,7 +13,7 @@ const LoginPage = () => {
     const loginUser = async (e) => {
         e.preventDefault();
 
-        const values = { userName, password }
+        const values = { userName, password };
         
         try{
             const response = await axios.post(
@@ -27,12 +27,14 @@ const LoginPage = () => {
                     tokenType: "Bearer",
                     authState: { 
                         email: response.data.email,
-                        username: values.userName
+                        username: values.userName,
+                        firstname: response.data.firstname,
+                        lastname: response.data.lastname
                     },
                 }
             )){
                 alert(response.data.message);
-                navigate('/home');
+                navigate('/profile');
             };
         } catch (error) {
             alert(error.response.data.message);
@@ -54,8 +56,8 @@ const LoginPage = () => {
     } else {
         return (
             <div className="container" style={{paddingTop: '10px'}}>
-                <h1 className="title">Login</h1>
-                <form>
+                <form className="box" style={{marginBottom: '-10px'}}>
+                    <h1 className="title">Login</h1>
                     <div className="field">
                         <input
                             className="input"
@@ -77,14 +79,19 @@ const LoginPage = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
+
+                        <input type="checkbox" style={{marginTop: '10px'}} onClick={togglePassword}/>  Show Password
                     </div>
 
-                    <input type="checkbox" style={{marginTop: '20px'}} onClick={togglePassword}/>  Show Password
-                </form>
+                    <Link to="/forgotpassword">Forgot Password?</Link>
 
-                <div className="field">
+                    <div className="field" style={{marginTop:'20px'}}>
+                        <button className="button is-success is-light" onClick={(e) => loginUser(e)}>Log In</button>
+                    </div>
+                </form>
+                {/* <div className="box field" style={{borderTop: 'none'}}>
                     <button className="button is-primary" style={{marginTop:'10px'}} onClick={(e) => loginUser(e)}>Log In</button>
-                </div>
+                </div> */}
             </div>
         )
     }

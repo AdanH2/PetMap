@@ -18,76 +18,76 @@ const NavBar = () => {
             <nav className="navbar is-success" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
                     <a className="navbar-item" href="/" style={{ fontSize: '30px' }}>
-                        <i class="fa fa-fw fa-paw"></i>
+                        <i className="fa fa-fw fa-paw"></i>
                         PetMap
                     </a>
 
-                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" href="https://www.google.com/">
+                    <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" href="https://www.google.com/">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                     </a>
                 </div>
 
-                <div id="navbarBasicExample" class="navbar-menu">
-                    <div class="navbar-start">
-                        <Link class="navbar-item" to="/map">
-                            <i class="fa fa-fw fa-home"></i>
+                <div id="navbarBasicExample" className="navbar-menu">
+                    <div className="navbar-start">
+                        <Link className="navbar-item" to="/map">
+                            <i className="fa fa-fw fa-home"></i>
                             Home
                         </Link>
 
-                        <a class="navbar-item" href="https://github.com/AdanH2/PetMap">
+                        <a className="navbar-item" href="https://github.com/AdanH2/PetMap">
                             Documentation
                         </a>
 
-                        <div class="navbar-item has-dropdown is-hoverable">
-                            <a class="navbar-link" href="https://www.google.com/">
+                        <div className="navbar-item has-dropdown is-hoverable">
+                            <a className="navbar-link" href="https://www.google.com/">
                                 More
                             </a>
 
-                            <div class="navbar-dropdown">
-                                <a class="navbar-item" href="https://www.google.com/">
+                            <div className="navbar-dropdown">
+                                <a className="navbar-item" href="https://www.google.com/">
                                     About
                                 </a>
 
-                                <a class="navbar-item" href="https://www.google.com/">
+                                <a className="navbar-item" href="https://www.google.com/">
                                     Jobs
                                 </a>
 
-                                <a class="navbar-item" href="https://www.google.com/">
+                                <a className="navbar-item" href="https://www.google.com/">
                                     Contact
                                 </a>
-                                <hr class="navbar-divider" />
-                                <a class="navbar-item" href="https://www.google.com/">
+                                <hr className="navbar-divider" />
+                                <a className="navbar-item" href="https://www.google.com/">
                                     Report an issue
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="navbar-end">
-                        <div class="navbar-item">
+                    <div className="navbar-end">
+                        <div className="navbar-item">
                             {
                                 isAuthenticated() ?
                                     (
-                                        <div class="buttons">
-                                            <Link class="button is-light" to="/profile">
-                                                <i class="fa fa-fw fa-user"></i>
+                                        <div className="buttons">
+                                            <Link className="button is-light" to="/profile">
+                                                <i className="fa fa-fw fa-user"></i>
                                                 <strong>{auth().username}'s Profile</strong>
                                             </Link>
-                                            <button class="button is-light" onClick={logOut}>
+                                            <button className="button is-light" onClick={logOut}>
                                                 <strong>Log Out</strong>
                                             </button>
                                         </div>
                                     )
                                 :
                                     (
-                                        <div class="buttons">
-                                            <Link class="button is-light" to="/signup">
+                                        <div className="buttons">
+                                            <Link className="button is-light" to="/signup">
                                                 <strong>Sign Up</strong>
                                             </Link>
-                                            <Link class="button is-light" to="/login">
-                                                <i class="fa fa-fw fa-user"></i>
+                                            <Link className="button is-light" to="/login">
+                                                <i className="fa fa-fw fa-user"></i>
                                                 <strong>Log In</strong>
                                             </Link>
                                         </div>
