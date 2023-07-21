@@ -1,17 +1,14 @@
-import NavBar from "./NavBar";
-
-
 const Home = () => {
-  return (
-    <div>
-      <NavBar/>
-      <div style={{textAlign:'center'}}>
-          <div className="title">
-              Welcome to PetMap!!!
-          </div>
-      </div>
-    </div>
-  )
+    return (
+        <div>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+            <div style={{ textAlign: 'center' }}>
+                <div className="title">
+                    Welcome to Petmap
+                </div>
+            </div>
+        </div>
+    )
 };
 
 export default Home;

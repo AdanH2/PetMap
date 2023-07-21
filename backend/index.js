@@ -15,6 +15,8 @@ try{
 
 app.use(cors());
 app.use(express.json());
+app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: false }));
 app.use('/products', productRoutes);
 app.use('/users', userRoutes);
 
